@@ -22,25 +22,23 @@ function Bird(x, y, diameter){
       this.y += this.velocity;
 
       if(this.y > height - this.diameter / 2){
-        this.isDeath = true;
-        textSize(20);
-        textAlign(CENTER);
-        text("Game Over!",width / 2, height / 2,)
+		  this.dead();
       }else if(this.y < this.diameter / 2){
-        this.isDeath = true;
-        textSize(20);
-        textAlign(CENTER);
-        text("Game Over!",width / 2, height / 2)
-      }
+		  this.dead();
+	  }
   };
+
+	this.dead = function () {
+		this.isDeath = true;
+		textSize(20);
+		textAlign(CENTER);
+		text("Game Over!", width / 2, height / 2)
+	};
 
   this.checkDeath = function(){
     if(this.x >= pipe.x - (pipe.width + (this.diameter / 2)) && pipe.x > 120){
       if(!(this.y - (this.diameter / 2 * 0.9)> pipe.UpPadding && this.y + (this.diameter / 2 * 0.9) <pipe.DownPadding)){
-        this.isDeath = true;
-        textSize(20);
-        textAlign(CENTER);
-        text("Game Over!",width / 2, height / 2);
+		  this.dead();
       }
     }
   };

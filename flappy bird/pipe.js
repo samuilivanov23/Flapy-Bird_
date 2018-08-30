@@ -8,12 +8,12 @@ function Pipe(){
   this.show = function(){
     rect(this.position - this.width, 0, this.width, this.height);
     rect(this.position - this.width, this.DownPadding, this.width, this.height);
-  }
+  };
 
   this.move = function(){
     if(this.position <= this.width / 2){
       this.position = width;
     }
     this.position -= 3;
-  }
+  };
 }
