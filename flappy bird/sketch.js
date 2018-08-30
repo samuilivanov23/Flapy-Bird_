@@ -14,7 +14,7 @@ function draw() {
     fill(255);
     bird.show();
     bird.update();
-    bird.checkDeath();
+    bird.checkDeath(pipe);
     fill(255,0,0);
     pipe.show();
     pipe.move();
