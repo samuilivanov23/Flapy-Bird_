@@ -10,11 +10,11 @@ function Bird(x, y, diameter){
 
   this.show = function(){
     ellipse(this.x, this.y, this.diameter, this.diameter);
-  }
+  };
 
   this.up = function(){
     this.velocity += this.upForce;
-  }
+  };
 
   this.update = function(){
       this.velocity += this.gravity;
@@ -32,7 +32,7 @@ function Bird(x, y, diameter){
         textAlign(CENTER);
         text("Game Over!",width / 2, height / 2)
       }
-  }
+  };
 
   this.checkDeath = function(){
     if(this.x >= pipe.x - (pipe.width + (this.diameter / 2)) && pipe.x > 120){
@@ -43,5 +43,5 @@ function Bird(x, y, diameter){
         text("Game Over!",width / 2, height / 2);
       }
     }
-  }
+  };
 }
